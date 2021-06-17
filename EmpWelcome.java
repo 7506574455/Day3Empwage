@@ -10,7 +10,6 @@ public class EmpWelcome {
        checkEmp();
    }
    public static void checkEmp() {
-        //variables
        int empHr = 0;
        int empWage = 0;
 
@@ -29,4 +28,3 @@ public class EmpWelcome {
        System.out.println("Emp Wage: " + empWage);
    }
 }
-
