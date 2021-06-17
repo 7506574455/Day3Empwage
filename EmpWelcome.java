@@ -1,39 +1,35 @@
 
 public class EmpWelcome {
      
-   private static final int IsFullTime = 1;
-   private static final int IsPartTime = 2;
-   private static final int EmpPerHr = 20;
-   private static final int WorkingDays = 2;
-
    public static void main(String[] args) {
-
-       checkEmp();
-   }
-   public static void checkEmp() {
+        int EmpPerHr = 20;
+        int WorkingDays = 20;
+        int MaxHrMonth = 100;
         //variables
-       int empHr = 0;
-       int totalWage = 0;
-       int empWage = 0;
+        int empHr = 0;
+        int totalempHr = 0;
+        int totalWorkingDays = 0;
 
-       for (int day = 0; day<WorkingDays; day++) {
-           int empCheck = (int) Math.floor(Math.random() * 10) % 3;
-           switch (empCheck) {
-           case IsPartTime:
-               empHr = 4;
-               break;
-           case IsFullTime:
-               empHr = 8;
-               break;
-           default:
-               empHr = 0;
-       }
-       empWage = empHr * EmpPerHr;
-       totalWage += empWage;
-       System.out.println("Emp Wage: " + empWage);
+        while (totalempHr <= MaxHrMonth && 
+               totalWorkingDays < WorkingDays) {
+            totalWorkingDays++;
+               int empCheck = (int) Math.floor(Math.random() * 10) % 3;
+               switch (empCheck) {
+                   case 1:
+                       empHr = 4;
+                       break;
+                   case 2:
+                       empHr = 8;
+                       break;
+                   default:
+                       empHr = 0;
+               }
+               totalempHr += empHr;
+               System.out.println("Day#: " + totalWorkingDays + " Emp Hr: " +empHr);
+        }
+        int totalEmpWage = totalempHr * EmpPerHr;
+        System.out.println("Total Emp Wage: " + totalEmpWage);
     }
-    System.out.println("Total EmpWage: " + totalWage);
-   }
 }
      
    
