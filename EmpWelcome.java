@@ -1,19 +1,26 @@
 
 public class EmpWelcome {
+     
+   private static int IsFullTime = 1;
+   private static int EmpPerHr = 20;
+   private static int IsPartTime = 2;
 
-     public static void main(String[] args) {
-             //constants
-       int IS_FULL_TIME = 1;
-       int EMP_PER_HR = 20;
-           //variables
-       int empHr = 0;
+   public static void main(String[] args) {
+
+       checkEmp();
+   }
+   public static void checkEmp() {
+       int empHrs = 0;
        int empWage = 0;
-       double empCheck = Math.floor(Math.random() * 10) % 2;
-       if (empCheck == IS_FULL_TIME)
-           empHr = 8;
+
+       double empCheck = Math.floor(Math.random() * 10) % 3;
+       if(empCheck == IsPartTime)
+           empHrs = 4;
+       else if (empCheck == IsFullTime)
+           empHrs = 8;
        else
-           empHr = 0;
-       empWage = empHr * EMP_PER_HR;
-           System.out.println("Emp Wage: " + empWage);
+           empHrs = 0;
+       empWage = empHrs * EmpPerHr;
+       System.out.println("Emp Wage: " + empWage);
    }
 }
